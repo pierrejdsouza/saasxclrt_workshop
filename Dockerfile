@@ -50,7 +50,7 @@ ENV ALLOW_OVERRIDE All
 ENV DATE_TIMEZONE UTC
 ENV TERM dumb
 
-COPY src /var/www/html/
+COPY src /var/www/html/ecs/
 COPY run-lamp.sh /usr/sbin/
 
 RUN a2enmod rewrite
