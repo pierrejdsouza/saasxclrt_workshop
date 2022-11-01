@@ -30,7 +30,7 @@ $secretName = 'mysecret';
 //$urlDocument = "http://" .$_ENV['ECS_CONTAINER_METADATA_URI_V4'] . "/latest/dynamic/instance-identity/document";
 //$document = file_get_contents($urlDocument);
 //$data = json_decode($document, true);
-$region = 'ap-southeast-1';
+$region = 'us-east-1';
 
 /**
  * In this sample we only handle the specific exceptions for the 'GetSecretValue' API.
