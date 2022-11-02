@@ -26,11 +26,15 @@ use Aws\Exception\AwsException;
 $secretName = 'mysecret';
 
 // Link local data provides information bout this instance	
-//$urlDocument = "http://169.254.169.254/latest/dynamic/instance-identity/document";
 //$urlDocument = "http://" .$_ENV['ECS_CONTAINER_METADATA_URI_V4'] . "/latest/dynamic/instance-identity/document";
 //$document = file_get_contents($urlDocument);
 //$data = json_decode($document, true);
-$region = 'us-east-1';
+//$region = 'us-east-1';
+
+$urlRoot=getenv("ECS_CONTAINER_METADATA_URI_V4") . "/task";
+$str = file_get_contents($urlRoot);
+$json = json_decode($str, true);
+$region = $json['Containers']['LogOptions'][0]['awslogs-region'];
 
 /**
  * In this sample we only handle the specific exceptions for the 'GetSecretValue' API.
