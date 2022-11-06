@@ -29,12 +29,7 @@ $secretName = 'mysecret';
 //$urlDocument = "http://" .$_ENV['ECS_CONTAINER_METADATA_URI_V4'] . "/latest/dynamic/instance-identity/document";
 //$document = file_get_contents($urlDocument);
 //$data = json_decode($document, true);
-$region = 'us-east-1';
-
-//$urlRoot=getenv("ECS_CONTAINER_METADATA_URI_V4") . "/task";
-//$str = file_get_contents($urlRoot);
-//$json = json_decode($str, true);
-//$region = $json['Containers']['LogOptions'][0]['awslogs-region'];
+$region =getenv("AWS_DEFAULT_REGION");
 
 /**
  * In this sample we only handle the specific exceptions for the 'GetSecretValue' API.
